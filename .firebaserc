@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lb-portfolio-d0a8f": {
+      "hosting": {
+        "app-portfolio-lb": [
+          "lb-portfolio-d0a8f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lb-portfolio-d0a8f"
+  }
+}
