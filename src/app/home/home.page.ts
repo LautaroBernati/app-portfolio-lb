@@ -4,10 +4,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomePage implements OnInit {
   private readonly collection;
   private readonly skills$;
   public data: any;
