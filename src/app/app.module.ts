@@ -10,6 +10,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeModule } from './home/home.module';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { HeaderModule } from './shared/ui/header/header.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { HeaderModule } from './shared/ui/header/header.module';
     SpinnerModule,
     HomeModule,
     HeaderModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    FontAwesomeModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

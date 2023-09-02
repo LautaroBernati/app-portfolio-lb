@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <h1 class="text-center">About</h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div style="display: flex; flex-direction: column; align-items: end;">
+        <div>
+          <ng-container *ngIf="pic$ | async as pic; else loadingImage;">
+            <img style="border-radius: 0.5rem;" [src]="pic" [width]="300" [height]="300" alt="image">
+          </ng-container>
+          <div style="display: flex; justify-content: space-evenly; width: 100%; margin-top: 1rem;">
+            <a mat-fab type="button" color="primary" href="https://www.linkedin.com/in/lautarobernati/" target="_blank">
+              <fa-icon [icon]="faLinkedinIn" size="2x"></fa-icon>
+            </a>
+            <a mat-fab type="button" color="primary" href="https://github.com/LautaroBernati" target="_blank">
+              <fa-icon [icon]="faGithub" size="2x"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h3>Web and mobile application developer</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero error non ad magni pariatur inventore, repudiandae delectus tempora in expedita quibusdam est illo temporibus excepturi alias minima obcaecati atque. Eveniet?
+      </p>
+      <div style="display: flex; justify-content: space-between;">
+        <ul style="list-style-type: none;">
+          <li style="display: flex; align-items: center;">
+            <fa-icon [icon]="faBirthdayCake" [border]="false"></fa-icon>
+            <strong style="margin-left: 1rem;">25 Years</strong>
+          </li>
+          <li style="display: flex; align-items: center;">
+            <fa-icon [icon]="faEnvelope" [border]="false"></fa-icon>
+            <strong style="margin-left: 1rem;">lautarobernati@gmail.com</strong>
+          </li>
+          <li style="display: flex; align-items: center;">
+            <fa-icon [icon]="faMapMarker" [border]="false"></fa-icon>
+            <strong style="margin-left: 1rem;">Argentina</strong>
+          </li>
+        </ul>
+        <ul style="list-style-type: none;">
+          <li>
+            <strong>Algun item mas</strong>
+          </li>
+          <li>
+            <strong>Algun item mas</strong>
+          </li>
+          <li>
+            <strong>Algun item mas</strong>
+          </li>
+        </ul>
+      </div>
+      <p>
+        I'm looking for a place to work at.
+      </p>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingImage>
+  <mat-spinner [mode]="'indeterminate'" style="max-width: 5rem; max-height: 5rem; margin: 1rem"></mat-spinner>
+</ng-template>
