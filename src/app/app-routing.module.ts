@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   },
+  {
+    path: 'skills', 
+    loadChildren: () => import('./skills/feature/skills-shell/skills.module').then(m => m.SkillsModule),
+  },
 ];
 
 @NgModule({

@@ -1,18 +1,18 @@
 <mat-toolbar [color]="'primary'">
-    <button mat-icon-button color="accent" aria-label="Icon-button with menu icon" [routerLink]="['/home']">
+    <button mat-icon-button aria-label="Icon-button with menu icon" [routerLink]="['/home']" [routerLinkActive]="'active-link'">
         <mat-icon>home</mat-icon>
     </button>
     <span>Lautaro Bernati</span>
-    <button mat-button aria-label="Icon-button with heart icon" [routerLink]="['/about']">
-        <mat-icon>about</mat-icon>
+    <a type="button" mat-button aria-label="Icon-button with heart icon" [routerLink]="['/about']" [routerLinkActive]="'active-link'">
+        <!-- <mat-icon>info</mat-icon> -->
         About
-    </button>
-    <button mat-button class="example-icon" aria-label="Icon-button with share icon">
-        <mat-icon>share</mat-icon>
+    </a>
+    <a type="button" mat-button aria-label="Icon-button with share icon" [routerLink]="['/skills']" [routerLinkActive]="'active-link'">
+        <!-- <mat-icon>list</mat-icon> -->
         Skills
-    </button>
-    <button mat-button class="example-icon" aria-label="Icon-button with contact icon">
-        <mat-icon>share</mat-icon>
+    </a>
+    <button mat-button aria-label="Icon-button with contact icon" [routerLinkActive]="'active-link'">
+        <!-- <mat-icon>share</mat-icon> -->
         Contact Me
     </button>
 </mat-toolbar>

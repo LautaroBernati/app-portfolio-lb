@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <h1 class="text-center">Skills</h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <ng-container *ngIf="(skills$ | async) as skills">
+        <sk-tabs-ui [frontEndSkills]="skills[0]" [backEndSkills]="skills[1]">
+        </sk-tabs-ui>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<mat-accordion multi>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ skill?.Framework }}
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- {{ skill?.Info }} -->
+        <div style="display: flex; flex-direction: column; width: 30rem; align-items: center;">
+          <h3 style="margin-bottom: 0px;">Progress</h3>
+          <mat-progress-bar [style]="'--mdc-linear-progress-active-indicator-color: green !important;'"
+            [mode]="'determinate'"
+            [value]="70"
+            [bufferValue]="100">
+        </mat-progress-bar>
+        </div>
+        <ng-container *ngIf="skill !== null">
+          <fa-icon [icon]="skill.Icon" size="2x"></fa-icon>
+        </ng-container>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- Content Start -->
+    <!-- {{ descripcion }} -->
+    <ng-container *ngFor="let item of skill?.Examples; last as last; first as first;">
+      <div style="display: flex; flex-direction: column;">
+        <hr *ngIf="!first" style="width: 80%; align-self: center;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
+          <div style="display: flex; flex-direction: column;">
+            <h2 *ngIf="item.Title">{{ item.Title }}</h2>
+            <p>{{ item.Desc }}</p>
+          </div>
+          <img style="border-radius: 3px; max-width: 15rem; cursor: pointer;"
+            [src]="(item.Img | blobToString)" alt="imageOfExample"
+            (click)="onImgClick(item.Img)">
+        </div>
+        <div style="align-self: flex-end;">
+          <a *ngIf="item.Url" type="button" mat-raised-button color="primary" [href]="item.Url" target="_blank">
+            Repository
+          </a>
+        </div>
+      </div>
+    </ng-container>
+    <!-- Content End -->
+  </mat-expansion-panel>
+</mat-accordion>

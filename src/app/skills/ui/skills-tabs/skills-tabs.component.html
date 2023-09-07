@@ -1,0 +1,50 @@
+<mat-tab-group [preserveContent]="false">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 10px;">panorama</mat-icon>
+      Front End
+    </ng-template>
+    <!-- start front end -->
+    <ng-template matTabContent>
+      <div style="padding: 10px;">
+        <ng-container *ngFor="let item of frontEndSkills">
+          <div style="margin-top: 0.5rem;">
+            <sk-tab-detail-ui [skill]="item">
+            </sk-tab-detail-ui>
+          </div>
+        </ng-container>
+      </div>
+    </ng-template>
+    <!-- end front end -->
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 10px;">http</mat-icon>
+      Back End
+    </ng-template>
+    <!-- start backend content -->
+    <div style="padding: 10px;">
+      <ng-container *ngFor="let item of backEndSkills">
+        <div style="margin-top: 0.5rem;">
+          <sk-tab-detail-ui [skill]="item">
+          </sk-tab-detail-ui>
+        </div>
+      </ng-container>
+    </div>
+    <!-- end backend content -->
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 10px;">build</mat-icon>
+      Tools
+    </ng-template>
+    Tools
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 10px;">whatshot</mat-icon>
+      Methodologies
+    </ng-template>
+    Methodologies
+  </mat-tab>
+</mat-tab-group>
