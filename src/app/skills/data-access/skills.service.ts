@@ -17,6 +17,7 @@ export type Skill = {
   Framework: string;
   Icon: IconDefinition;
   Info: string;
+  Progress: number;
   Examples: Array<Example>;
 };
 

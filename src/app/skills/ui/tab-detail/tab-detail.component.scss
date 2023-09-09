@@ -2,3 +2,12 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.mat-mdc-progress-bar {
+  @mixin number-to-color($number) {
+    $green: limegreen;
+    $red: red;
+    $color: mix($red, $green, $number / 100); // Adjust color based on the number
+    background-color: $color;
+  }
+}

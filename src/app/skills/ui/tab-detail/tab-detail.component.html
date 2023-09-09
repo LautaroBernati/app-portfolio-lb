@@ -1,16 +1,17 @@
-<mat-accordion multi>
+<mat-accordion>
   <mat-expansion-panel>
-    <mat-expansion-panel-header>
+    <mat-expansion-panel-header style="display: flex; justify-content: space-evenly;">
       <mat-panel-title>
         {{ skill?.Framework }}
       </mat-panel-title>
       <mat-panel-description>
         <!-- {{ skill?.Info }} -->
-        <div style="display: flex; flex-direction: column; width: 30rem; align-items: center;">
+        <div style="display: flex; flex-direction: column; min-width: 30%; max-width: 70%; width: 100%; align-items: center;">
           <h3 style="margin-bottom: 0px;">Progress</h3>
-          <mat-progress-bar [style]="'--mdc-linear-progress-active-indicator-color: green !important;'"
+          <mat-progress-bar
+            [ngStyle]="{'--mdc-linear-progress-active-indicator-color': getColor(skill?.Progress ?? 0)}"
             [mode]="'determinate'"
-            [value]="70"
+            [value]="skill?.Progress"
             [bufferValue]="100">
         </mat-progress-bar>
         </div>

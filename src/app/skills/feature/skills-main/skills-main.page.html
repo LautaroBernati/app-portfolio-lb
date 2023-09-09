@@ -7,7 +7,7 @@
   <hr>
   <div class="row">
     <div class="col">
-      <ng-container *ngIf="(skills$ | async) as skills">
+      <ng-container *ngIf="(skills$ | async) as skills;">
         <sk-tabs-ui [frontEndSkills]="skills[0]" [backEndSkills]="skills[1]">
         </sk-tabs-ui>
       </ng-container>

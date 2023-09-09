@@ -9,3 +9,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.ng-animating .mat-accordion .mat-expansion-panel .mat-expansion-panel-content {
+  height: 0px;
+  visibility: hidden;
+}

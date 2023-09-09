@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill, SkillsService, StrippedSkill } from '../../data-access/skills.service';
 import { combineLatest, concatMap, firstValueFrom, map, tap } from 'rxjs';
-import { IconDefinition, faAngular, faReact, faVuejs, faNodeJs, faNode } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition, faAngular, faReact, faVuejs, faNodeJs, faNode, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 
 function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -67,10 +67,12 @@ export class SkillsPage implements OnInit {
 
     const nodeSkills$ = this.skillsService.strippedSkills$.pipe(map(SSs => SSs.find(ss => ss.UID === 'NOD')!), concatMap(async skill => await this.mapearImagenes(skill, faNode)));
     const nestSkills$ = this.skillsService.strippedSkills$.pipe(map(SSs => SSs.find(ss => ss.UID === 'NES')!), concatMap(async skill => await this.mapearImagenes(skill, faNodeJs)));
+    const netSkills$ = this.skillsService.strippedSkills$.pipe(map(SSs => SSs.find(ss => ss.UID === 'NET')!), concatMap(async skill => await this.mapearImagenes(skill, faMicrosoft)));
 
     const backEndSkills$ = combineLatest([
       nodeSkills$,
       nestSkills$,
+      netSkills$,
     ]);
 
     this.skills$ = combineLatest([

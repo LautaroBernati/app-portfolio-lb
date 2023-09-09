@@ -20,6 +20,14 @@ export class TabDetailComponent implements OnInit {
   onImgClick(img: Blob) {
     this.dialog.open(ImageDetailDialog, { data: img });
   }
+
+  getColor(progress: number) {
+    const red = Math.min(255, Math.round((100 - progress) * 255 / 50)); // Red component
+    const green = Math.min(255, Math.round((progress) * 255 / 50)); // Green component
+
+    // Return the color as an RGB string
+    return `rgb(${red}, ${green}, 0)`;
+  }
 }
 
 @Component({
