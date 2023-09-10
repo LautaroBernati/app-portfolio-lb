@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col text-center">
+      <h1>Curriculum Vitae</h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div>
+        <h4><strong>Experiences</strong></h4>
+        <ng-container *ngIf="experiences$ | async as experiences">
+          <ul *ngFor="let item of experiences" class="timeline">
+            <li style="padding: 0.5rem;">
+              <cv-stepper-ui
+                [experience]="item">
+              </cv-stepper-ui>
+            </li>
+          </ul>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col">
+      <h4><strong>Education</strong></h4>
+      <ng-container *ngIf="education$ | async as education">
+        <ul *ngFor="let item of education" class="timeline">
+          <li style="padding: 0.5rem">
+            <cv-stepper-ui
+              [experience]="item">
+            </cv-stepper-ui>
+          </li>
+        </ul>
+      </ng-container>
+    </div>
+    <div class="col">
+      <h4>Languages</h4>
+      <ul *ngFor="let item of [0, 1, 2]">
+        <li>
+          <cv-stepper-ui>
+          </cv-stepper-ui>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

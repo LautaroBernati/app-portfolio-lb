@@ -8,12 +8,20 @@ const routes: Routes = [
   },
   {
     path: 'about',
+    pathMatch: 'full',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   },
   {
     path: 'skills', 
     loadChildren: () => import('./skills/feature/skills-shell/skills.module').then(m => m.SkillsModule),
   },
+  {
+    path: 'cv', 
+    loadChildren: () => import('./cv/feature/cv-shell/cv.module').then(m => m.CVModule),
+  },
+  {
+    path: '**', redirectTo: '/home',
+  }
 ];
 
 @NgModule({

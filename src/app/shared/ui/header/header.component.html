@@ -1,17 +1,20 @@
-<mat-toolbar [color]="'primary'">
-    <button mat-icon-button aria-label="Icon-button with menu icon" [routerLink]="['/home']" [routerLinkActive]="'active-link'">
+<mat-toolbar [color]="'primary'" style="overflow-y: auto;">
+    <button mat-icon-button aria-label="Home button" [routerLink]="['/home']" [routerLinkActive]="'active-link'">
         <mat-icon>home</mat-icon>
     </button>
     <span>Lautaro Bernati</span>
-    <a type="button" mat-button aria-label="Icon-button with heart icon" [routerLink]="['/about']" [routerLinkActive]="'active-link'">
+    <a type="button" mat-button aria-label="Button to about page" [routerLink]="['/about']" [routerLinkActive]="'active-link'">
         <!-- <mat-icon>info</mat-icon> -->
         About
     </a>
-    <a type="button" mat-button aria-label="Icon-button with share icon" [routerLink]="['/skills']" [routerLinkActive]="'active-link'">
+    <a type="button" mat-button aria-label="Button to skills page" [routerLink]="['/skills']" [routerLinkActive]="'active-link'">
         <!-- <mat-icon>list</mat-icon> -->
         Skills
     </a>
-    <button mat-button aria-label="Icon-button with contact icon" [routerLinkActive]="'active-link'">
+    <a type="button" mat-button aria-label="Button to CV page" [routerLink]="['/cv']" [routerLinkActive]="'active-link'">
+        CV
+    </a>
+    <button type="button" mat-button aria-label="Button to contact me page" [routerLinkActive]="'active-link'">
         <!-- <mat-icon>share</mat-icon> -->
         Contact Me
     </button>
