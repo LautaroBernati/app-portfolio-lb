@@ -21,5 +21,7 @@ export class CVItemComponent {
   @Input() public experience: Experience | null = null;
   public showDetails = false;
 
-  constructor() { }
+  onExpand() {
+    this.showDetails = !this.showDetails;
+  }
 }

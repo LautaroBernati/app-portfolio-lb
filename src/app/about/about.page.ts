@@ -3,11 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { from, mergeMap } from 'rxjs';
 import { faBirthdayCake, faMapMarker, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { fadeIn } from '../shared/utils/fade-in.animation';
 
 @Component({
   selector: 'app-about',
   templateUrl: 'about.page.html',
-  styleUrls: ['about.page.scss']
+  styleUrls: ['about.page.scss'],
+  animations: fadeIn(),
 })
 export class AboutPage implements OnInit {
   public readonly pic$;

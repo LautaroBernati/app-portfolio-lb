@@ -10,6 +10,7 @@ export type Experience = {
   Tech?: string;
   From: number;
   To: number;
+  LogoUrl?: string;
 };
 
 @Injectable()

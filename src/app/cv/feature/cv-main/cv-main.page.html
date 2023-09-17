@@ -5,12 +5,12 @@
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row" @fadeIn>
     <div class="col">
       <div>
         <h4><strong>Experiences</strong></h4>
         <ng-container *ngIf="experiences$ | async as experiences">
-          <ul *ngFor="let item of experiences" class="timeline">
+          <ul *ngFor="let item of experiences" class="timeline" @fadeIn>
             <li style="padding: 0.5rem;">
               <cv-stepper-ui
                 [experience]="item">
@@ -23,7 +23,7 @@
     <div class="col">
       <h4><strong>Education</strong></h4>
       <ng-container *ngIf="education$ | async as education">
-        <ul *ngFor="let item of education" class="timeline">
+        <ul *ngFor="let item of education" class="timeline" @fadeIn>
           <li style="padding: 0.5rem">
             <cv-stepper-ui
               [experience]="item">
@@ -34,12 +34,15 @@
     </div>
     <div class="col">
       <h4>Languages</h4>
-      <ul *ngFor="let item of [0, 1, 2]">
-        <li>
-          <cv-stepper-ui>
-          </cv-stepper-ui>
-        </li>
-      </ul>
+      <ng-container *ngIf="(languages$ | async) as langs">
+        <ul *ngFor="let item of langs" @fadeIn>
+          <li style="list-style-type: none;">
+            <cv-lang-item-ui
+              [item]="item">
+            </cv-lang-item-ui>
+          </li>
+        </ul>
+      </ng-container>
     </div>
   </div>
 </div>

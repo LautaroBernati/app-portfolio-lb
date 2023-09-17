@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-header>
+  <mat-card-header (click)="onExpand()" style="cursor: pointer; justify-content: space-between;">
     <mat-card-title>
       {{ experience?.Title }}
     </mat-card-title>
@@ -9,22 +9,23 @@
         <span>{{ experience?.From + ' - ' + (experience?.To ?? 'Present') }}</span>
       </div>
     </mat-card-subtitle>
+    <img [src]="experience?.LogoUrl" alt="Image" style="max-width: 80px; max-height: 80px; border-radius: 50%;">
   </mat-card-header>
   <mat-card-content>
     <div class="collapsible" [@collapse]="!showDetails">
       <hr>
       <p>{{ experience?.Description }}</p>
       <p *ngIf="experience?.Tech">
-        <strong>Tech:</strong>
+        <strong>Stack:</strong>
         {{ experience?.Tech }}
       </p>
     </div>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button type="button" mat-button (click)="showDetails = !showDetails;">
+    <button type="button" color="accent" mat-icon-button (click)="onExpand()">
       <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
       <mat-icon *ngIf="showDetails">expand_less</mat-icon>
-      Details
+      <!-- Details -->
     </button>
   </mat-card-actions>
 </mat-card>
