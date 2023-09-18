@@ -1,6 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Skill } from '../../data-access/skills.service';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, style, transition, animate } from '@angular/animations';
+import { Tool } from '../../data-access/tools.service';
+import { Methodology } from '../../data-access/methodologies.service';
+
 
 @Component({
   selector: 'sk-tabs-ui',
@@ -22,11 +25,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ],
 })
-export class SkillsTabsComponent implements OnInit {
+export class SkillsTabsComponent {
   @Input() public frontEndSkills: Skill[] = [];
   @Input() public backEndSkills: Skill[] = [];
-
-  constructor() { }
-
-  ngOnInit() { }
+  @Input() public tools: Tool[] = [];
+  @Input() public methodologies: Methodology[] = [];
 }

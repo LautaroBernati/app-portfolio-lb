@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { TabDetailModule } from '../tab-detail/tab-detail.module';
+import { ToolMetDetailComponent } from '../tool-met-detail/tool-met-detail.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { TabDetailModule } from '../tab-detail/tab-detail.module';
     TabDetailModule,
     MatTabsModule,
     MatIconModule,
+    ToolMetDetailComponent,
   ],
   exports: [SkillsTabsComponent],
   providers: [],

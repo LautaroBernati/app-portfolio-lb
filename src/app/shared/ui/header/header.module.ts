@@ -6,16 +6,21 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
+    CommonModule,
     RouterModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
+    FontAwesomeModule,
   ],
   exports: [HeaderComponent],
   providers: [],

@@ -38,13 +38,23 @@
       <mat-icon style="margin-right: 10px;">build</mat-icon>
       Tools
     </ng-template>
-    Tools
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div *ngFor="let item of tools" style="width: 55%; padding: 1rem;">
+        <sk-tool-met-detail-ui [item]="item">
+        </sk-tool-met-detail-ui>
+      </div>
+    </div>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon style="margin-right: 10px;">whatshot</mat-icon>
       Methodologies
     </ng-template>
-    Methodologies
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div *ngFor="let item of methodologies" style="width: 55%; padding: 1rem;">
+        <sk-tool-met-detail-ui [item]="item">
+        </sk-tool-met-detail-ui>
+      </div>
+    </div>
   </mat-tab>
 </mat-tab-group>

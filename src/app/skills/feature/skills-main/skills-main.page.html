@@ -7,8 +7,9 @@
   <hr>
   <div class="row">
     <div class="col">
-      <ng-container *ngIf="(skills$ | async) as skills;">
-        <sk-tabs-ui [frontEndSkills]="skills[0]" [backEndSkills]="skills[1]">
+      <ng-container *ngIf="(dependencies$ | async) as deps;">
+        <sk-tabs-ui
+          [frontEndSkills]="deps[0]" [backEndSkills]="deps[1]" [tools]="deps[2]" [methodologies]="deps[3]">
         </sk-tabs-ui>
       </ng-container>
     </div>

@@ -4,21 +4,23 @@
     </button>
     <span>Lautaro Bernati</span>
     <a type="button" mat-button aria-label="Button to about page" [routerLink]="['/about']" [routerLinkActive]="'active-link'">
-        <!-- <mat-icon>info</mat-icon> -->
         About
     </a>
     <a type="button" mat-button aria-label="Button to skills page" [routerLink]="['/skills']" [routerLinkActive]="'active-link'">
-        <!-- <mat-icon>list</mat-icon> -->
         Skills
     </a>
     <a type="button" mat-button aria-label="Button to CV page" [routerLink]="['/cv']" [routerLinkActive]="'active-link'">
         CV
     </a>
-    <button type="button" mat-button aria-label="Button to contact me page" [routerLinkActive]="'active-link'">
-        <!-- <mat-icon>share</mat-icon> -->
-        Contact Me
-    </button>
-    <mat-slide-toggle style="margin-left: auto;" [formControl]="darkMode">
-        Dark mode
-    </mat-slide-toggle>
+    <a type="button" mat-button aria-label="Button to contact me page" [routerLink]="['/contact']" [routerLinkActive]="'active-link'">
+        Contact
+    </a>
+    <span mat-button style="margin-left: auto; display: flex; justify-content: center; align-items: center;">
+        <div *ngIf="{ value: (darkMode.valueChanges | async) } as value">
+            <fa-icon *ngIf="value.value" [icon]="moonIcon" style="color: rgb(159, 1, 173);"></fa-icon>
+            <fa-icon *ngIf="!value.value" [icon]="sunIcon" style="color: goldenrod;"></fa-icon>
+        </div>
+        <mat-slide-toggle style="margin-left: 0.5rem;" [formControl]="darkMode">
+        </mat-slide-toggle>
+    </span>
 </mat-toolbar>

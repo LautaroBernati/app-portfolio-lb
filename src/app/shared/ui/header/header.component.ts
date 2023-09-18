@@ -1,14 +1,18 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   public readonly darkMode = new FormControl(false, { nonNullable: true });
+  public readonly moonIcon = faMoon;
+  public readonly sunIcon = faSun;
 
   constructor() {
     const document = inject(DOCUMENT);

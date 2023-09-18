@@ -1,12 +1,8 @@
 .ng-fa-icon {
-
   min-width: 2.5rem;
-  // padding: 3px;
-  // border: 1px red solid;
-  // --fa-border-radius: 50px;
-  // --fa-border-padding: 6px;
-  // --fa-border-color: rgb(255, 222, 161);
-  // --fa-border-style: dotted;
-  // --fa-border-width: 2px;
   color: orange;
+}
+
+li {
+  display: flex; align-items: center;
 }

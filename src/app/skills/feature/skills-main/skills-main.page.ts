@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Skill, SkillsService, StrippedSkill } from '../../data-access/skills.service';
 import { combineLatest, concatMap, firstValueFrom, map, tap } from 'rxjs';
 import { IconDefinition, faAngular, faReact, faVuejs, faNodeJs, faNode, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { ToolsService } from '../../data-access/tools.service';
+import { MethodologiesService } from '../../data-access/methodologies.service';
 
 function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -27,10 +29,12 @@ function blobToBase64(blob: Blob): Promise<string> {
   styleUrls: ['skills-main.page.scss']
 })
 export class SkillsPage implements OnInit {
-  public readonly skills$;
+  public readonly dependencies$;
 
   constructor(
     private readonly skillsService: SkillsService,
+    private readonly toolsService: ToolsService,
+    private readonly methodologiesService: MethodologiesService,
   ) {
     const angSkills$ = this.skillsService.strippedSkills$.pipe(
       map(strippedSkills => {
@@ -75,9 +79,11 @@ export class SkillsPage implements OnInit {
       netSkills$,
     ]);
 
-    this.skills$ = combineLatest([
+    this.dependencies$ = combineLatest([
       frontEndSkills$,
       backEndSkills$,
+      this.toolsService.tools$,
+      this.methodologiesService.methodologies$,
     ]);
   }
 

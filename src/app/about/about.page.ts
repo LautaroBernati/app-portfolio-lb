@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { from, mergeMap } from 'rxjs';
-import { faBirthdayCake, faMapMarker, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faBirthdayCake, faMapMarker, faEnvelope, faAtom, faGraduationCap, faPlane } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { fadeIn } from '../shared/utils/fade-in.animation';
 
@@ -18,6 +18,9 @@ export class AboutPage implements OnInit {
   public readonly faEnvelope = faEnvelope;
   public readonly faGithub = faGithub;
   public readonly faLinkedinIn = faLinkedinIn;
+  public readonly atomIcon = faAtom;
+  public readonly capIcon = faGraduationCap;
+  public readonly planeIcon = faPlane;
 
   constructor(private readonly http: HttpClient) {
     this.pic$ = this.http.get('assets/images/profile-pic.jpg', { responseType: 'blob' }).pipe(
