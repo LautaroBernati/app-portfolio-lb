@@ -11,7 +11,7 @@ import { fadeIn } from '../shared/utils/fade-in.animation';
   styleUrls: ['about.page.scss'],
   animations: fadeIn(),
 })
-export class AboutPage implements OnInit {
+export class AboutPage {
   public readonly pic$;
   public readonly faBirthdayCake = faBirthdayCake;
   public readonly faMapMarker = faMapMarker;
@@ -21,6 +21,8 @@ export class AboutPage implements OnInit {
   public readonly atomIcon = faAtom;
   public readonly capIcon = faGraduationCap;
   public readonly planeIcon = faPlane;
+  public readonly birthday = new Date(1997, 8, 20);
+  public readonly years = new Date(new Date().getFullYear() - this.birthday.getTime());
 
   constructor(private readonly http: HttpClient) {
     this.pic$ = this.http.get('assets/images/profile-pic.jpg', { responseType: 'blob' }).pipe(
@@ -44,5 +46,17 @@ export class AboutPage implements OnInit {
     );
   }
 
-  ngOnInit() { }
+  public calculateAge(birthDate: Date): number {
+    const currentDate = new Date();
+    const age = currentDate.getFullYear() - birthDate.getFullYear();
+
+    const hasBirthdayOccurred = currentDate.getMonth() > birthDate.getMonth() ||
+      (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() >= birthDate.getDate());
+
+    if (!hasBirthdayOccurred) {
+      return age - 1;
+    }
+
+    return age;
+  }
 }

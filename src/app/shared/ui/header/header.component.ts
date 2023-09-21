@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,8 @@ export class HeaderComponent {
   public readonly darkMode = new FormControl(false, { nonNullable: true });
   public readonly moonIcon = faMoon;
   public readonly sunIcon = faSun;
+  public readonly language = new FormControl('en', { nonNullable: true });
+  private readonly translate = inject(TranslateService);
 
   constructor() {
     const document = inject(DOCUMENT);
@@ -24,5 +27,10 @@ export class HeaderComponent {
         document.body.classList.remove('dark-mode');
       }
     });
+  }
+
+  switchLang(lang: string) {
+    this.language.patchValue(lang);
+    this.translate.use(lang);
   }
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col">
-      <h1 class="text-center">About</h1>
+      <h1 class="text-center">{{ 'about.title' | translate }}</h1>
     </div>
   </div>
   <hr>
@@ -24,15 +24,15 @@
       </div>
     </div>
     <div class="col">
-      <h3>Web and mobile application developer</h3>
+      <h3 [translate]="'about.subtitle'"></h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero error non ad magni pariatur inventore, repudiandae delectus tempora in expedita quibusdam est illo temporibus excepturi alias minima obcaecati atque. Eveniet?
+        {{ 'about.intro' | translate }}
       </p>
       <div style="display: flex; justify-content: space-between;">
         <ul style="list-style-type: none;">
           <li>
             <fa-icon [icon]="faBirthdayCake" [border]="false"></fa-icon>
-            <strong style="margin-left: 1rem;">25 Years</strong>
+            <strong style="margin-left: 1rem;">{{ birthday | date: 'dd-MM-YYYY' }} {{ '(' + calculateAge(birthday) }} {{ ('about.items.years' | translate) + ')' }}</strong>
           </li>
           <li>
             <fa-icon [icon]="faEnvelope" [border]="false"></fa-icon>
@@ -48,21 +48,18 @@
         <ul style="list-style-type: none;">
           <li>
             <fa-icon [icon]="atomIcon"></fa-icon>
-            <strong>Constant growth</strong>
+            <strong>{{ 'about.items.growth' | translate }}</strong>
           </li>
           <li>
             <fa-icon [icon]="capIcon"></fa-icon>
-            <strong>Associate's Degree</strong>
+            <strong>{{ 'about.items.diploma' | translate }}</strong>
           </li>
           <li>
             <fa-icon [icon]="planeIcon"></fa-icon>
-            <strong>Ready to move</strong>
+            <strong>{{ 'about.items.ready' | translate }}</strong>
           </li>
         </ul>
       </div>
-      <p>
-        I'm looking for a place to work at.
-      </p>
     </div>
   </div>
 </div>

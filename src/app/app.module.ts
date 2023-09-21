@@ -10,8 +10,14 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeModule } from './home/home.module';
 import { SpinnerModule } from './shared/spinner/spinner.module';
 import { HeaderModule } from './shared/ui/header/header.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +34,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    FontAwesomeModule
+    FontAwesomeModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en'
+    })
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

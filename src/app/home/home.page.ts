@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -15,9 +16,16 @@ export class HomePage implements OnInit {
   constructor(
     private readonly spinner: NgxSpinnerService,
     private readonly firestore: Firestore,
+    private readonly translate: TranslateService,
   ) {
     this.collection = collection(this.firestore, 'skills');
     this.skills$ = collectionData(this.collection);
+
+    translate.addLangs(['en', 'fr', 'es']);
+    translate.setDefaultLang('en');
+
+    const browserLang = translate.getBrowserLang();
+    translate.use('es');
   }
 
   ngOnInit() {

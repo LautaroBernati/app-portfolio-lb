@@ -98,7 +98,7 @@ export class SkillsPage implements OnInit {
 
     for (const iterator of array.Examples) {
       const a = /*await blobToBase64(*/await firstValueFrom(this.skillsService.ObtenerImagen(iterator.ImgUrl))/*)*/;
-      modifiedExamples.push({ ...iterator, Img: a } as { Title?: string; Desc: string; Img: Blob; ImgUrl: string });
+      modifiedExamples.push({ ...iterator, Img: a } as { Title: string; Desc: string; Img: Blob; ImgUrl: string; Type: string });
     }
 
     array.Examples = modifiedExamples;

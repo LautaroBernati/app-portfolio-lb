@@ -36,7 +36,7 @@
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon style="margin-right: 10px;">build</mat-icon>
-      Tools
+      <div>{{ 'skills.tabs.tools' | translate }}</div>
     </ng-template>
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <div *ngFor="let item of tools" style="width: 55%; padding: 1rem;">
@@ -48,7 +48,7 @@
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon style="margin-right: 10px;">whatshot</mat-icon>
-      Methodologies
+      <div>{{ 'skills.tabs.metds' | translate }}</div>
     </ng-template>
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <div *ngFor="let item of methodologies" style="width: 55%; padding: 1rem;">

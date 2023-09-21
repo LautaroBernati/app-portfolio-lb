@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatSelectModule,
+    MatMenuModule,
     FontAwesomeModule,
+    TranslateModule.forChild(),
   ],
   exports: [HeaderComponent],
   providers: [],

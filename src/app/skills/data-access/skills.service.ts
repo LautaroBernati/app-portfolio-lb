@@ -5,11 +5,12 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { Observable } from 'rxjs';
 
 type Example = {
-  Title?: string;
+  Title: string;
   Img: Blob;
   Desc: string;
   Url?: string;
   ImgUrl: string;
+  Type: string;
 };
 
 export type Skill = {

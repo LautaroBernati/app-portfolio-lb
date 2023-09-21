@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BlobToStringPipe } from '../../utils/blob-string.pipe';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { BlobToStringPipe } from '../../utils/blob-string.pipe';
     MatDialogModule,
     MatProgressBarModule,
     BlobToStringPipe,
+    TranslateModule.forChild()
   ],
   exports: [TabDetailComponent],
   providers: [],

@@ -1,0 +1,36 @@
+{
+  "about": {
+    "title": "Acerca De",
+    "subtitle": "Desarrollador Web y Mobile",
+    "intro": "Mi carrera como desarrollador comenzó durante mi estancia en el ejército, donde dediqué un año y medio como desarrollador Full Stack. Esta experiencia única me permitió prosperar bajo presión, dominando el arte de resolver problemas en escenarios complejos y al mismo tiempo realizar mis estudios académicos. Después de graduarme, hice la transición al mundo corporativo y me uní al estimado equipo de Coto CICSA. Durante mi estancia de más de un año allí, me especialicé en desarrollo front-end, sumergiéndome en la creación de experiencias de usuario cautivadoras y traduciendo conceptos de diseño complejos en interfaces digitales. Además, busco constantemente el desarrollo profesional completando cursos como la certificación React.js, lo que ha mejorado aún más mi experiencia y versatilidad en la entrega de soluciones web excepcionales.",
+    "items": {
+      "years": "años",
+      "growth": "Constante crecimiento",
+      "diploma": "Analista de Sistemas",
+      "ready": "Listo para mudarme"
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "progressTitle": "Progreso",
+    "btnRepo": "Repositorio",
+    "tabs": {
+      "tools": "Herramientas",
+      "metds": "Metodologías"
+    },
+    "type": {
+      "project": "Proyecto",
+      "codeFragment": "Fragmento de código"
+    },
+    "examples": {
+      "ang0": "La importancia de Lazy Loading juega un papel crucial en la escalabilidad de una aplicación Angular. La implementación y el diseño adecuados pueden generar importantes mejoras en el rendimiento y una mejora de presupuestos de compilación.",
+      "ang1": "En una aplicación Angular, los componentes smart son responsables de la gestión del estado, la lógica compleja y la comunicación con los servicios, ofreciendo control centralizado para una optimización eficiente del rendimiento. Al gestionar estratégicamente el estado e implementar estrategias de detección de cambios, los componentes smart pueden minimizar las re-renderizaciones innecesarias, lo que genera importantes ganancias de rendimiento. Los componentes dumb, por otro lado, se centran únicamente en la representación de la interfaz de usuario y las interacciones del usuario, lo que promueve la reutilización, la legibilidad, la facilidad de prueba, el aislamiento y el debugging simple. La separación de estos roles mejora la mantenibilidad y la eficiencia del desarrollo, al tiempo que garantiza una separación clara de las preocupaciones en la arquitectura de la aplicación, lo que en última instancia contribuye a una experiencia de usuario más fluida y eficaz.",
+      "rea0": "Una aplicación React productiva, que funciona como un comercio electrónico en línea. Usando Context, Bootstrap, SweetAlert y firebase como base de datos. Alojada en Netlify.",
+      "vue0": "Una aplicación Vue 3 deprecada diseñada para un proyecto mío, que se conecta a una API creada con NodeJs y Express con una instancia de MongoDB para almacenamiento. Esta aplicación fue reemplazada posteriormente por una versión portada creada con Angular 15.",
+      "node0": "Deprecada. Creada con Node y Express, esta API maneja la gestión de datos del proyecto Vue 3. Experiencia con OAuthstandard, OpenID y tokens de autenticación. Experiencia con transmisiones y buffers también. El repositorio es privado.",
+      "nest0": "API que reemplaza la antigua API de nodejs y utiliza varias herramientas como MongoDB, transacciones y RxJS para admitir completamente operaciones asíncronas. El repositorio es privado.",
+      "nest1": "API web de soporte que ayuda a recuperar información sobre el proyecto (principalmente datos relacionados con el backoffice). Se conecta a un clúster MongoDB Dockerizado y admite transacciones.",
+      "net0": "La API relacionada con el ejército, construida sobre .NET Core usando Entity Framework, sirve como una plataforma central para administrar datos y procesos relacionados con el ejército. Las características clave incluyen:\n1. **Calificación del personal**: la API permite el acceso a datos de calificación del personal militar, incluidos entrenamiento, certificaciones, rangos y especializaciones. Los usuarios pueden ver y actualizar sus registros, mientras que el control de acceso basado en roles garantiza la seguridad de los datos.\n2. **Almacenamiento de datos**: Al utilizar Entity Framework, la API almacena y administra de manera eficiente datos militares, lo que garantiza la integridad de los datos y la consulta fluida de las bases de datos.\n3. **Autenticación y autorización**: existen mecanismos de autenticación seguros y autorización basados en roles para proteger los datos confidenciales, garantizando que solo el personal autorizado pueda acceder y administrar la información.\n5. **Análisis e informes**: la API ofrece funciones de análisis e informes, lo que facilita la toma de decisiones basada en datos y el seguimiento del progreso de las operaciones militares.\n6. **Control de versiones y documentación**: la API está versionada y bien documentada, lo que facilita la integración y el uso para los desarrolladores, al tiempo que garantiza la compatibilidad y la facilidad de mantenimiento."
+    }
+  }
+}

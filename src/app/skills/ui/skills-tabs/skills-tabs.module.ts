@@ -5,6 +5,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { TabDetailModule } from '../tab-detail/tab-detail.module';
 import { ToolMetDetailComponent } from '../tool-met-detail/tool-met-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ToolMetDetailComponent } from '../tool-met-detail/tool-met-detail.compo
     MatTabsModule,
     MatIconModule,
     ToolMetDetailComponent,
+    TranslateModule.forChild()
   ],
   exports: [SkillsTabsComponent],
   providers: [],

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { Component, Input, Inject } from '@angular/core';
 import { Skill } from '../../data-access/skills.service';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
@@ -7,15 +7,11 @@ import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
   templateUrl: 'tab-detail.component.html',
   styleUrls: ['tab-detail.component.scss']
 })
-export class TabDetailComponent implements OnInit {
+export class TabDetailComponent {
   @Input() public descripcion: string = '';
   @Input() public skill: Skill | null = null;
 
   constructor(public dialog: MatDialog) { }
-
-  ngOnInit() {
-    // console.log(this.skill);
-  }
 
   onImgClick(img: Blob) {
     this.dialog.open(ImageDetailDialog, { data: img });

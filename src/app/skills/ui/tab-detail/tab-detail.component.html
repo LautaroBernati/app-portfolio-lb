@@ -6,14 +6,12 @@
       </mat-panel-title>
       <mat-panel-description>
         <!-- {{ skill?.Info }} -->
-        <div style="display: flex; flex-direction: column; min-width: 30%; max-width: 70%; width: 100%; align-items: center;">
-          <h3 style="margin-bottom: 0px;">Progress</h3>
-          <mat-progress-bar
-            [ngStyle]="{'--mdc-linear-progress-active-indicator-color': getColor(skill?.Progress ?? 0)}"
-            [mode]="'determinate'"
-            [value]="skill?.Progress"
-            [bufferValue]="100">
-        </mat-progress-bar>
+        <div
+          style="display: flex; flex-direction: column; min-width: 30%; max-width: 70%; width: 100%; align-items: center;">
+          <h3 style="margin-bottom: 0px;">{{ 'skills.progressTitle' | translate }}</h3>
+          <mat-progress-bar [ngStyle]="{'--mdc-linear-progress-active-indicator-color': getColor(skill?.Progress ?? 0)}"
+            [mode]="'determinate'" [value]="skill?.Progress" [bufferValue]="100">
+          </mat-progress-bar>
         </div>
         <ng-container *ngIf="skill !== null">
           <fa-icon [icon]="skill.Icon" size="2x"></fa-icon>
@@ -23,20 +21,23 @@
     <!-- Content Start -->
     <!-- {{ descripcion }} -->
     <ng-container *ngFor="let item of skill?.Examples; last as last; first as first;">
-      <div style="display: flex; flex-direction: column;">
-        <hr *ngIf="!first" style="width: 80%; align-self: center;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-          <div style="display: flex; flex-direction: column;">
-            <h2 *ngIf="item.Title">{{ item.Title }}</h2>
-            <p>{{ item.Desc }}</p>
-          </div>
-          <img style="border-radius: 3px; max-width: 15rem; cursor: pointer;"
-            [src]="(item.Img | blobToString)" alt="imageOfExample"
-            (click)="onImgClick(item.Img)">
+      <div class="contenedor">
+        <!-- <hr *ngIf="!first" style="width: 80%; align-self: center;"> -->
+        <!-- <div class="contenedor"> -->
+        <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+          <h2>{{ item.Title }}</h2>
+          <small>{{ item.Type | translate }}</small>
         </div>
-        <div style="align-self: flex-end;">
-          <a *ngIf="item.Url" type="button" mat-raised-button color="primary" [href]="item.Url" target="_blank">
-            Repository
+        <div style="display: flex; justify-content: space-between;">
+          <p>{{ item.Desc | translate }}</p>
+          <img style="border-radius: 3px; max-width: 15rem; cursor: pointer;" [src]="(item.Img | blobToString)"
+            alt="imageOfExample" (click)="onImgClick(item.Img)">
+        </div>
+        <!-- </div> -->
+        <div *ngIf="item.Url" style="align-self: flex-end; margin-top: 1rem;">
+          <a type="button" mat-raised-button color="primary" [href]="item.Url" target="_blank">
+            <mat-icon>launch</mat-icon>
+            <div>{{ 'skills.btnRepo' | translate }}</div>
           </a>
         </div>
       </div>

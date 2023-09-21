@@ -1,0 +1,36 @@
+{
+  "about": {
+    "title": "About",
+    "subtitle": "Web and mobile application developer",
+    "intro": "My journey as a developer started during my tenure with the military, where I dedicated a year and a half to full-stack development. This unique experience allowed me to thrive under pressure, mastering the art of problem-solving in complex scenarios while simultaneously pursuing my academic studies. Upon graduation, I transitioned into the corporate world and joined the esteemed team at Coto CICSA. During my one-year+ tenure there, I specialized in front-end development, immersing myself in crafting captivating user experiences and translating intricate design concepts into seamless digital interfaces. Furthermore, I consistently pursue professional development by completing courses such as a React.js certification, which has further enhanced my expertise and versatility in delivering exceptional web solutions.",
+    "items": {
+      "years": "years",
+      "growth": "Constant growth",
+      "diploma": "Associate's degree in Systems Analysis",
+      "ready": "Ready to move"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "progressTitle": "Progress",
+    "btnRepo": "Repository",
+    "tabs": {
+      "tools": "Tools",
+      "metds": "Methodologies"
+    },
+    "type": {
+      "project": "Project",
+      "codeFragment": "Code Fragment"
+    },
+    "examples": {
+      "ang0": "The importance of Lazy Loading plays a crucial role in the scalability of an Angular Application. Proper implementation and design can lead to serious performance gains and better compile budgets.",
+      "ang1": "In an Angular application, smart components are responsible for state management, complex logic, and communication with services, offering centralized control for efficient performance optimization. By strategically managing state and implementing change detection strategies, smart components can minimize unnecessary re-renders, resulting in significant performance gains. Dumb components, on the other hand, focus solely on UI rendering and user interactions, promoting reusability, readability, ease of testing, isolation, and simplified debugging. Separating these roles enhances maintainability and development efficiency while ensuring a clear separation of concerns in the application architecture, ultimately contributing to a smoother and more performant user experience.",
+      "rea0": "Running React Application, which works as an online e-commerce. Using Context, Bootstrap, SweetAlert and firebase as a database. Hosted on Netlify.",
+      "vue0": "A running Vue 3 App designed for a project of mine, which connects to an API built using NodeJs and Express with an instance of MongoDB for storage. This app was later replaced witha ported version built using Angular 15.",
+      "node0": "Built using Node and Express, this API handles data management of the Vue 3 project. Experience with OAuthstandard, OpenID and auth tokens. Experience with streams and buffers as well. Repo is private.",
+      "nest0": "API that replaces the old nodejs api, and uses various tools such as MongoDB, transactions and RxJS to fully support async operations. Repo is private.",
+      "nest1": "Supportive Web API that helps retrieve information regarding the project (primarily backoffice-related data). It connects to a Dockerized MongoDB cluster and supports transactions.",
+      "net0": "The Military-related API, built on .NET Core using Entity Framework, serves as a central platform for managing military-related data and processes. Key features include:\n1. **Personnel Qualification**: The API enables access to military personnel qualification data, including training, certifications, ranks, and specializations. Users can view and update their records, while role-based access control ensures data security.\n2. **Data Storage**: Utilizing Entity Framework, the API efficiently stores and manages military data, ensuring data integrity and seamless database querying.\n3. **Authentication and Authorization**: Secure authentication and role-based authorization mechanisms are in place to protect sensitive data, ensuring that only authorized personnel can access and manage information.\n5. **Analytics and Reporting**: The API offers analytics and reporting features, facilitating data-driven decision-making and progress tracking for military operations.\n6. **Versioning and Documentation**: The API is versioned and well-documented, making it easy for developers to integrate and use, while ensuring compatibility and ease of maintenance."
+    }
+  }
+}

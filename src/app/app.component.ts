@@ -1,5 +1,5 @@
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +9,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   public readonly title = 'app-portfolio-lb';
-  private isDarkMode = true;
-
-  constructor(private readonly overlayContainer: OverlayContainer) {
-    setTimeout(() => {
-      this.toggleDarkMode();
-    }, 2000);
-  }
-
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-
-    if (this.isDarkMode) {
-      this.overlayContainer.getContainerElement().classList.add('dark-theme');
-    } else {
-      this.overlayContainer.getContainerElement().classList.remove('dark-theme');
-    }
+  private readonly translate = inject(TranslateService);
+  constructor() {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
   }
 }

@@ -11,3 +11,14 @@
     background-color: $color;
   }
 }
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px lightgrey solid;
+  border-radius: 5px;
+  margin: 1rem;
+}
