@@ -1,47 +1,54 @@
-import { Component, OnInit } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NgxSpinnerService } from 'ngx-spinner';
+import { Subject, startWith, takeUntil } from 'rxjs';
+import Typed, { TypedOptions } from 'typed.js';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss']
+  styleUrls: ['./home.page.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomePage implements OnInit {
-  private readonly collection;
-  private readonly skills$;
-  public data: any;
+export class HomePage implements OnInit, OnDestroy {
+  private readonly destroy$ = new Subject<boolean>();
+  private typedInstance?: Typed;
 
   constructor(
-    private readonly spinner: NgxSpinnerService,
-    private readonly firestore: Firestore,
-    private readonly translate: TranslateService,
-  ) {
-    this.collection = collection(this.firestore, 'skills');
-    this.skills$ = collectionData(this.collection);
+    private readonly translateService: TranslateService,
+  ) { }
 
-    translate.addLangs(['en', 'fr', 'es']);
-    translate.setDefaultLang('en');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use('es');
+  ngOnDestroy(): void {
+    this.typedInstance?.destroy();
+    this.destroy$.next(true);
+    this.destroy$.complete();
   }
 
-  ngOnInit() {
-    this.spinner.show();
-    this.skills$.subscribe({
-      next: data => {
-        this.data = data;
-        this.spinner.hide();
-      },
-      error: (err?: any) => {
-        this.spinner.hide();
-        console.error(err);
-      },
-      complete: () => {
-        this.spinner.hide();
+  ngOnInit(): void {
+    this.translateService.onLangChange.pipe(
+      startWith({ lang: this.translateService.currentLang }),
+      takeUntil(this.destroy$),
+    ).subscribe(value => {
+      switch (value.lang) {
+        case 'en':
+          this.createTyped(['', 'I am Full-Stack.', 'I build Web apps.', 'I build Mobile apps.']);
+          break;
+        case 'es':
+          this.createTyped(['', 'Soy Full-Stack.', 'Desarrollo Web apps.', 'Desarrollo Mobile apps.']);
+          break;
       }
     });
+  }
+
+  private createTyped(strings: string[]) {
+    this.typedInstance?.destroy();
+    const options: TypedOptions = {
+      strings,
+      typeSpeed: 150,
+      backSpeed: 100,
+      loop: true
+    };
+    this.typedInstance = new Typed('.typed', options);
+    this.typedInstance.reset(true);
   }
 }

@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -24,6 +25,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatIconModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatTooltipModule,
     MatMenuModule,
     FontAwesomeModule,
     TranslateModule.forChild(),

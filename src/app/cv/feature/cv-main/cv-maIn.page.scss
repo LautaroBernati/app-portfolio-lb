@@ -26,7 +26,7 @@ ul.timeline > li {
 
 ul.timeline > li:before {
   content: ' ';
-  background: white;
+  background: #d81b60;
   display: inline-block;
   position: absolute;
   border-radius: 50%;
@@ -36,18 +36,3 @@ ul.timeline > li:before {
   height: 20px;
   z-index: 400;
 }
-
-// ul.custom-list {
-//   list-style: none;
-//   margin-left: 0;
-//   padding-left: 1em;
-//   text-indent: -1em;
-// }
-
-// ul.custom-list li::before {
-//   content: " ";
-//   background: lightgray;
-//   border-radius: 1ch;
-//   padding-inline: 1ch;
-//   margin-inline-end: 1ch;
-// }

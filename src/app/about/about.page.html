@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container seccion">
   <div class="row mt-5">
     <div class="col">
       <h1 class="text-center">{{ 'about.title' | translate }}</h1>
@@ -32,17 +32,17 @@
         <ul style="list-style-type: none;">
           <li>
             <fa-icon [icon]="faBirthdayCake" [border]="false"></fa-icon>
-            <strong style="margin-left: 1rem;">{{ birthday | date: 'dd-MM-YYYY' }} {{ '(' + calculateAge(birthday) }} {{ ('about.items.years' | translate) + ')' }}</strong>
+            <strong>{{ birthday | date: 'dd-MM-YYYY' }} {{ '(' + calculateAge(birthday) }} {{ ('about.items.years' | translate) + ')' }}</strong>
           </li>
           <li>
             <fa-icon [icon]="faEnvelope" [border]="false"></fa-icon>
-            <strong style="margin-left: 1rem;">
+            <strong>
               <a href="mailto:lautarobernati@gmail.com">lautarobernati@gmail.com</a>
             </strong>
           </li>
           <li>
             <fa-icon [icon]="faMapMarker" [border]="false"></fa-icon>
-            <strong style="margin-left: 1rem;">Argentina</strong>
+            <strong>Argentina</strong>
           </li>
         </ul>
         <ul style="list-style-type: none;">

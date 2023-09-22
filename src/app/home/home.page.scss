@@ -1,0 +1,33 @@
+.component-background {
+  background-image: url('/assets/images/home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section {
+  padding-top: 100px;
+}
+
+.contenedor {
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tipeo {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  border-bottom: 3px solid darkred;
+}
+
+.iam {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 28px;
+}
