@@ -14,7 +14,7 @@
   <mat-card-content>
     <div class="collapsible" [@collapse]="!showDetails">
       <hr>
-      <p>{{ experience?.Description }}</p>
+      <p>{{ experience?.Description! | translate }}</p>
       <p *ngIf="experience?.Tech">
         <strong>Stack:</strong>
         {{ experience?.Tech }}
@@ -22,9 +22,10 @@
     </div>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button type="button" color="accent" mat-icon-button (click)="onExpand()">
+    <button type="button" color="primary" mat-stroked-button (click)="onExpand()">
       <mat-icon *ngIf="!showDetails">expand_more</mat-icon>
       <mat-icon *ngIf="showDetails">expand_less</mat-icon>
+      {{ (showDetails ? ('cv.buttons.details.expanded') : ('cv.buttons.details.hidden')) | translate }}
       <!-- Details -->
     </button>
   </mat-card-actions>

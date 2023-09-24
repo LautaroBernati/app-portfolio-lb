@@ -43,5 +43,36 @@
       "nest1": "API web de soporte que ayuda a recuperar información sobre el proyecto (principalmente datos relacionados con el backoffice). Se conecta a un clúster MongoDB Dockerizado y admite transacciones.",
       "net0": "La API relacionada con el ejército, construida sobre .NET Core usando Entity Framework, sirve como una plataforma central para administrar datos y procesos relacionados con el ejército. Las características clave incluyen:\n1. **Calificación del personal**: la API permite el acceso a datos de calificación del personal militar, incluidos entrenamiento, certificaciones, rangos y especializaciones. Los usuarios pueden ver y actualizar sus registros, mientras que el control de acceso basado en roles garantiza la seguridad de los datos.\n2. **Almacenamiento de datos**: Al utilizar Entity Framework, la API almacena y administra de manera eficiente datos militares, lo que garantiza la integridad de los datos y la consulta fluida de las bases de datos.\n3. **Autenticación y autorización**: existen mecanismos de autenticación seguros y autorización basados en roles para proteger los datos confidenciales, garantizando que solo el personal autorizado pueda acceder y administrar la información.\n5. **Análisis e informes**: la API ofrece funciones de análisis e informes, lo que facilita la toma de decisiones basada en datos y el seguimiento del progreso de las operaciones militares.\n6. **Control de versiones y documentación**: la API está versionada y bien documentada, lo que facilita la integración y el uso para los desarrolladores, al tiempo que garantiza la compatibilidad y la facilidad de mantenimiento."
     }
+  },
+  "cv": {
+    "exps": {
+      "coto": "En mi puesto actual, tengo la tarea de crear aplicaciones Angular desde cero, con especial atención en las consideraciones de seguridad. Soy muy consciente de los posibles problemas de seguridad e implemento meticulosamente las mejores prácticas, como el uso de Renderer2, para garantizar la manipulación segura del DOM. Además, hago un uso extensivo de técnicas de carga diferida para optimizar el rendimiento de la aplicación y mejorar la experiencia del usuario. Además de estas medidas de seguridad y mejoras de rendimiento, participo activamente en el mantenimiento, actualización y mejora de aplicaciones Angular existentes. Además, me he embarcado en el viaje de explorar funcionalidades backend, donde estoy trabajando con Entity Framework para seguir ampliando mi conjunto de habilidades y contribuir a un espectro más amplio de desarrollo de proyectos. Además, asumo el rol de mentor, guiando y compartiendo mi experiencia en Angular con un colega de trabajo, fomentando su crecimiento y dominio en esta tecnología.",
+      "army": "Durante mi paso por este puesto, fui responsable de mejorar, expandir y crear continuamente una gama diversa de herramientas diseñadas para cumplir con los requisitos específicos del Ejército. Este rol multifacético me obligó a trabajar tanto en el backend, incluida la ampliación de las capacidades de tres API web preexistentes, como en el frontend. En particular, para el desarrollo frontend dentro de un proyecto Laravel existente, utilicé principalmente jQuery para implementar funcionalidades adicionales.",
+      "freelance": "Durante mi trabajo como freelancer, colaboré con contactos personales en una variedad de proyectos. Aunque trabajaba principalmente de forma independiente, también tomé la iniciativa de desarrollar dos proyectos propios. Utilicé Vue.js, incluidos Vue 2 y Vue 3, para el desarrollo front-end. Para el backend, empleé MongoDB para gestionar y almacenar datos de forma eficaz. Esta experiencia me permitió obtener conocimientos valiosos sobre el desarrollo web y mostrar mi capacidad para trabajar con diferentes tecnologías y clientes."
+    },
+    "education": {
+      "coderhouse": "Este curso intensivo de 4 meses proporciona una exploración integral de React.js, con un enfoque más amplio en el desarrollo front-end y los conceptos fundamentales de JavaScript. A lo largo del programa, participé activamente en el aprendizaje práctico conceptualizando, diseñando y construyendo una aplicación web de comercio electrónico completamente funcional. Esta experiencia práctica incluyó un uso extensivo de React.js para el desarrollo front-end dinámico, junto con Firebase como una solución de base de datos sólida y escalable. Al implementar con éxito esta aplicación web de comercio electrónico, obtuve competencia práctica en la creación de interfaces de usuario interactivas, la gestión de datos en tiempo real y la garantía de una experiencia de compra en línea, solidificando así mi experiencia tanto en React.js como en el desarrollo front-end como tal.",
+      "ort": "El título superior de Análisis de Sistemas con especialización en Desarrollo Web es un programa integral que combina principios básicos de análisis de sistemas con un enfoque especializado en desarrollo web. Los estudiantes obtienen una base sólida en arquitectura, modelado y optimización de sistemas, al mismo tiempo que adquieren competencia en tecnologías web, lenguajes de programación y diseño web. Este título brinda a los graduados las habilidades para trabajar como analistas de sistemas con un énfasis distintivo en tecnologías basadas en web, lo que los convierte en activos valiosos en industrias que van desde el comercio electrónico hasta la atención médica. Se destacan en el desarrollo de sitios web responsivos, la gestión de bases de datos, la garantía de la seguridad web y la integración de funcionalidades de comercio electrónico, todo ello al mismo tiempo que comprenden los fundamentos de la gestión de proyectos para supervisar los proyectos de desarrollo web de principio a fin."
+    },
+    "langs": {
+      "spanish": {
+        "desc": "Español",
+        "level": "Nativo"
+      },
+      "german": {
+        "desc": "Alemán",
+        "level": "Principiante"
+      },
+      "english": {
+        "desc": "Inglés",
+        "level": "Nativo"
+      }
+    },
+    "buttons": {
+      "details": {
+        "expanded": "Menos",
+        "hidden": "Más"
+      }
+    }
   }
 }
