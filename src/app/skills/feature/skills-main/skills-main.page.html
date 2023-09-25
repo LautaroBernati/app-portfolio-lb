@@ -7,7 +7,7 @@
   <hr>
   <div class="row">
     <div class="col">
-      <ng-container *ngIf="(dependencies$ | async) as deps;">
+      <ng-container *ngIf="(dependencies$ | async) as deps; else loading;">
         <sk-tabs-ui
           [frontEndSkills]="deps[0]" [backEndSkills]="deps[1]" [tools]="deps[2]" [methodologies]="deps[3]">
         </sk-tabs-ui>
@@ -15,3 +15,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #loading>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

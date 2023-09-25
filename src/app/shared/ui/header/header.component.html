@@ -8,12 +8,12 @@
             <a type="button" mat-stroked-button aria-label="Button to about page" [routerLink]="['/about']"
                 [routerLinkActive]="'active-link'">
                 <mat-icon>person</mat-icon>
-                About
+                <span>{{ 'navbar.about' | translate }}</span>
             </a>
             <a type="button" mat-stroked-button aria-label="Button to skills page" [routerLink]="['/skills']"
                 [routerLinkActive]="'active-link'">
                 <mat-icon>work</mat-icon>
-                Skills
+                <span>{{ 'navbar.skills' | translate }}</span>
             </a>
             <a type="button" mat-stroked-button aria-label="Button to CV page" [routerLink]="['/cv']"
                 [routerLinkActive]="'active-link'">
