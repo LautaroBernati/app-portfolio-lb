@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent {
   public readonly sunIcon = faSun;
   public readonly language = new FormControl('en', { nonNullable: true });
   private readonly translate = inject(TranslateService);
+  private readonly spinner = inject(NgxSpinnerService);
 
   constructor() {
     const document = inject(DOCUMENT);
@@ -31,6 +33,10 @@ export class HeaderComponent {
 
   switchLang(lang: string) {
     this.language.patchValue(lang);
-    this.translate.use(lang);
+    this.translate.use(lang).subscribe({
+      next: () => this.spinner.show(),
+      error: err => console.error(err),
+      complete: () => this.spinner.hide(),
+    });
   }
 }
