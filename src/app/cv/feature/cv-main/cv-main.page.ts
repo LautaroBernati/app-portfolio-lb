@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ExperiencesService } from '../../data-access/experiences.service';
 import { EducationService } from '../../data-access/education.service';
 import { LaguangesService } from '../../data-access/languages.service';
@@ -10,7 +10,7 @@ import { fadeIn } from 'src/app/shared/utils/fade-in.animation';
   styleUrls: ['cv-main.page.scss'],
   animations: fadeIn(),
 })
-export class CVMainPage implements OnInit {
+export class CVMainPage {
   public readonly experiences$;
   public readonly education$;
   public readonly languages$;
@@ -24,6 +24,4 @@ export class CVMainPage implements OnInit {
     this.education$ = this.educationService.experiences$;
     this.languages$ = this.langService.langs$
   }
-
-  ngOnInit() { }
 }

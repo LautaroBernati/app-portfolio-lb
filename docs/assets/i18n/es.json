@@ -1,4 +1,7 @@
 {
+  "app": {
+    "spinnerText": "Cargando"
+  },
   "navbar": {
     "home": "Inicio",
     "about": "Acerca De",
@@ -45,6 +48,11 @@
     }
   },
   "cv": {
+    "subTitles": {
+      "experiences": "Experiencia",
+      "education": "Educación",
+      "languages": "Idiomas"
+    },
     "exps": {
       "coto": "En mi puesto actual, tengo la tarea de crear aplicaciones Angular desde cero, con especial atención en las consideraciones de seguridad. Soy muy consciente de los posibles problemas de seguridad e implemento meticulosamente las mejores prácticas, como el uso de Renderer2, para garantizar la manipulación segura del DOM. Además, hago un uso extensivo de técnicas de carga diferida para optimizar el rendimiento de la aplicación y mejorar la experiencia del usuario. Además de estas medidas de seguridad y mejoras de rendimiento, participo activamente en el mantenimiento, actualización y mejora de aplicaciones Angular existentes. Además, me he embarcado en el viaje de explorar funcionalidades backend, donde estoy trabajando con Entity Framework para seguir ampliando mi conjunto de habilidades y contribuir a un espectro más amplio de desarrollo de proyectos. Además, asumo el rol de mentor, guiando y compartiendo mi experiencia en Angular con un colega de trabajo, fomentando su crecimiento y dominio en esta tecnología.",
       "army": "Durante mi paso por este puesto, fui responsable de mejorar, expandir y crear continuamente una gama diversa de herramientas diseñadas para cumplir con los requisitos específicos del Ejército. Este rol multifacético me obligó a trabajar tanto en el backend, incluida la ampliación de las capacidades de tres API web preexistentes, como en el frontend. En particular, para el desarrollo frontend dentro de un proyecto Laravel existente, utilicé principalmente jQuery para implementar funcionalidades adicionales.",

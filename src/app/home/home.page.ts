@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subject, startWith, takeUntil } from 'rxjs';
 import Typed, { TypedOptions } from 'typed.js';
 
@@ -16,6 +17,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(
     private readonly translateService: TranslateService,
+    private readonly spinner: NgxSpinnerService,
   ) { }
 
   ngOnDestroy(): void {

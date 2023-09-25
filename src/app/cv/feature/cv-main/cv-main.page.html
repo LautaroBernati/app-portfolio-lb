@@ -8,8 +8,8 @@
   <div class="row" @fadeIn>
     <div class="col">
       <div>
-        <h4><strong>Experiences</strong></h4>
-        <ng-container *ngIf="experiences$ | async as experiences">
+        <h4><strong>{{ 'cv.subTitles.experiences' | translate }}</strong></h4>
+        <ng-container *ngIf="experiences$ | async as experiences; else loading;">
           <ul *ngFor="let item of experiences" class="timeline" @fadeIn>
             <li style="padding: 0.5rem;">
               <cv-stepper-ui
@@ -21,8 +21,8 @@
       </div>
     </div>
     <div class="col">
-      <h4><strong>Education</strong></h4>
-      <ng-container *ngIf="education$ | async as education">
+      <h4><strong>{{ 'cv.subTitles.education' | translate }}</strong></h4>
+      <ng-container *ngIf="education$ | async as education; else loading;">
         <ul *ngFor="let item of education" class="timeline" @fadeIn>
           <li style="padding: 0.5rem">
             <cv-stepper-ui
@@ -33,8 +33,8 @@
       </ng-container>
     </div>
     <div class="col">
-      <h4>Languages</h4>
-      <ng-container *ngIf="(languages$ | async) as langs">
+      <h4><strong>{{ 'cv.subTitles.languages' | translate }}</strong></h4>
+      <ng-container *ngIf="(languages$ | async) as langs; else loading;">
         <ul *ngFor="let item of langs" @fadeIn>
           <li style="list-style-type: none;">
             <cv-lang-item-ui
@@ -46,3 +46,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #loading>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
