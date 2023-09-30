@@ -9,7 +9,7 @@
         <span>{{ experience?.From + ' - ' + (experience?.To ?? 'Present') }}</span>
       </div>
     </mat-card-subtitle>
-    <img [src]="experience?.LogoUrl" alt="Image" style="max-width: 80px; max-height: 80px; border-radius: 50%;">
+    <img [src]="experience?.LogoUrl" alt="Image" style="max-width: 80px; max-height: 80px; border-radius: 50%; background-color: white;">
   </mat-card-header>
   <mat-card-content>
     <div class="collapsible" [@collapse]="!showDetails">

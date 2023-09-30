@@ -1,13 +1,13 @@
-<div class="container seccion">
+<div class="container-fluid seccion">
   <div class="row mt-5">
     <div class="col">
       <h1 class="text-center">{{ 'about.title' | translate }}</h1>
     </div>
   </div>
   <hr>
-  <div class="row" @fadeIn>
-    <div class="col">
-      <div style="display: flex; flex-direction: column; align-items: end;">
+  <div class="contenedor" @fadeIn>
+    <div class="columna">
+      <div class="imagen-botones">
         <div>
           <ng-container *ngIf="pic$ | async as pic; else loadingImage;">
             <img style="border-radius: 0.5rem;" [src]="pic" [width]="300" [height]="300" alt="image">
@@ -23,13 +23,13 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="columna">
       <h3 [translate]="'about.subtitle'"></h3>
       <p>
         {{ 'about.intro' | translate }}
       </p>
-      <div style="display: flex; justify-content: space-between;">
-        <ul style="list-style-type: none;">
+      <div class="items-cv">
+        <ul>
           <li>
             <fa-icon [icon]="faBirthdayCake" [border]="false"></fa-icon>
             <strong>{{ birthday | date: 'dd-MM-YYYY' }} {{ '(' + calculateAge(birthday) }} {{ ('about.items.years' | translate) + ')' }}</strong>
@@ -45,7 +45,7 @@
             <strong>Argentina</strong>
           </li>
         </ul>
-        <ul style="list-style-type: none;">
+        <ul>
           <li>
             <fa-icon [icon]="atomIcon"></fa-icon>
             <strong>{{ 'about.items.growth' | translate }}</strong>
