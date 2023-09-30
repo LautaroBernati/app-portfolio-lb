@@ -8,7 +8,6 @@ import { filter } from 'rxjs';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  // encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   public readonly title = 'app-portfolio-lb';
@@ -28,7 +27,6 @@ export class AppComponent {
       filter(value => (value instanceof RouteConfigLoadStart || value instanceof RouteConfigLoadEnd)),
     ).subscribe((event) => {
       if (event instanceof RouteConfigLoadStart) {
-        console.log('comienza');
         this.spinner.show();
       } else if (event instanceof RouteConfigLoadEnd) {
         this.spinner.hide();

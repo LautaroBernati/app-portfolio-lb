@@ -1,41 +1,44 @@
 <header>
     <nav class="navbar fixed-top">
         <mat-toolbar [color]="'primary'" style="overflow-y: auto;">
-            <a mat-stroked-button aria-label="Home button" [routerLink]="['/home']" [routerLinkActive]="'active-link'">
-                <mat-icon>home</mat-icon>
-                <span>{{ 'navbar.home' | translate }}</span>
-            </a>
-            <a type="button" mat-stroked-button aria-label="Button to about page" [routerLink]="['/about']"
-                [routerLinkActive]="'active-link'">
-                <mat-icon>person</mat-icon>
-                <span>{{ 'navbar.about' | translate }}</span>
-            </a>
-            <a type="button" mat-stroked-button aria-label="Button to skills page" [routerLink]="['/skills']"
-                [routerLinkActive]="'active-link'">
-                <mat-icon>work</mat-icon>
-                <span>{{ 'navbar.skills' | translate }}</span>
-            </a>
-            <a type="button" mat-stroked-button aria-label="Button to CV page" [routerLink]="['/cv']"
-                [routerLinkActive]="'active-link'">
-                <mat-icon>insert_drive_file</mat-icon>
-                CV
-            </a>
+            <div style="display: flex;">
+                <a mat-stroked-button aria-label="Home button" [routerLink]="['/home']"
+                    [routerLinkActive]="'active-link'">
+                    <mat-icon>home</mat-icon>
+                    <span>{{ 'navbar.home' | translate }}</span>
+                </a>
+                <a type="button" mat-stroked-button aria-label="Button to about page" [routerLink]="['/about']"
+                    [routerLinkActive]="'active-link'">
+                    <mat-icon>person</mat-icon>
+                    <span>{{ 'navbar.about' | translate }}</span>
+                </a>
+                <a type="button" mat-stroked-button aria-label="Button to skills page" [routerLink]="['/skills']"
+                    [routerLinkActive]="'active-link'">
+                    <mat-icon>work</mat-icon>
+                    <span>{{ 'navbar.skills' | translate }}</span>
+                </a>
+                <a type="button" mat-stroked-button aria-label="Button to CV page" [routerLink]="['/cv']"
+                    [routerLinkActive]="'active-link'">
+                    <mat-icon>insert_drive_file</mat-icon>
+                    CV
+                </a>
+            </div>
             <!-- <a type="button" mat-button aria-label="Button to contact me page" [routerLink]="['/contact']"
                 [routerLinkActive]="'active-link'">
                 Contact
             </a> -->
             <span mat-button style="margin-left: auto; display: flex; justify-content: center; align-items: center;">
-                <button type="button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Language menu" style="margin-right: 10px;"
-                    [matTooltip]="'navbar.lang' | translate">
+                <button type="button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Language menu"
+                    style="margin-right: 10px;" [matTooltip]="'navbar.lang' | translate">
                     <mat-icon>translate</mat-icon>
-                    <!-- {{ 'navbar.lang' | translate }} -->
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
                     <button type="button" mat-menu-item (click)="switchLang('en')">
                         <mat-icon *ngIf="language.value === 'en'">radio_button_checked</mat-icon>
                         <mat-icon *ngIf="language.value !== 'en'">radio_button_unchecked</mat-icon>
                         <span style="display: flex; align-items: center;">
-                            <img src="assets/images/cv/flags/united-kingdom-flag.png" alt="image" width="20" height="20" style="border-radius: 50%;">
+                            <img src="assets/images/cv/flags/united-kingdom-flag.png" alt="image" width="20" height="20"
+                                style="border-radius: 50%;">
                             <div style="padding-left: 5px;">En</div>
                         </span>
                     </button>
@@ -43,7 +46,8 @@
                         <mat-icon *ngIf="language.value === 'es'">radio_button_checked</mat-icon>
                         <mat-icon *ngIf="language.value !== 'es'">radio_button_unchecked</mat-icon>
                         <span style="display: flex; align-items: center;">
-                            <img src="assets/images/cv/flags/spain-flag.png" alt="image" width="20" height="20" style="border-radius: 50%;">
+                            <img src="assets/images/cv/flags/spain-flag.png" alt="image" width="20" height="20"
+                                style="border-radius: 50%;">
                             <div style="padding-left: 5px;">Es</div>
                         </span>
                     </button>
@@ -52,7 +56,8 @@
                     <fa-icon *ngIf="value.value" [icon]="moonIcon" style="color: rgb(159, 1, 173);"></fa-icon>
                     <fa-icon *ngIf="!value.value" [icon]="sunIcon" style="color: goldenrod;"></fa-icon>
                 </div>
-                <mat-slide-toggle style="margin-left: 0.5rem;" [formControl]="darkMode" [matTooltip]="'navbar.darkMode' | translate">
+                <mat-slide-toggle style="margin-left: 0.5rem;" [formControl]="darkMode"
+                    [matTooltip]="'navbar.darkMode' | translate">
                 </mat-slide-toggle>
             </span>
         </mat-toolbar>
