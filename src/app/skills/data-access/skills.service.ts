@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 
 type Example = {
   Title: string;
-  Img: Blob;
   Desc: string;
   Url?: string;
   ImgUrl: string;
