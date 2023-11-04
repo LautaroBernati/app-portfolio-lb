@@ -13,7 +13,7 @@ export class TabDetailComponent {
 
   constructor(public dialog: MatDialog) { }
 
-  onImgClick(img: Blob) {
+  onImgClick(img: string) {
     this.dialog.open(ImageDetailDialog, { data: img });
   }
 
@@ -35,10 +35,10 @@ export class TabDetailComponent {
         <mat-icon>close</mat-icon>
       </button>
     </div>
-    <img [src]="data | blobToString" alt="Image_detail">
+    <img [src]="data" alt="Image_detail">
   </div>
   `,
 })
 export class ImageDetailDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Blob) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: string) { }
 }

@@ -7,7 +7,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { BlobToStringPipe } from '../../utils/blob-string.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 
 
@@ -21,7 +20,6 @@ import { TranslateModule } from '@ngx-translate/core';
     MatButtonModule,
     MatDialogModule,
     MatProgressBarModule,
-    BlobToStringPipe,
     TranslateModule.forChild()
   ],
   exports: [TabDetailComponent],
