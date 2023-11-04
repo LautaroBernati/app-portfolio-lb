@@ -29,7 +29,7 @@
             {{ item.Desc | translate }}
           </p>
           <div style="max-width: 35%; max-height: 35%;">
-            <img [src]="(item.Img | blobToString)" alt="imageOfExample" (click)="onImgClick(item.Img)">
+            <img [src]="(item.ImgUrl)" alt="imageOfExample" (click)="onImgClick(item.ImgUrl)">
           </div>
         </div>
         <div *ngIf="item.Url" style="align-self: flex-end; margin-top: 1rem;">
