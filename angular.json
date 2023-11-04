@@ -53,6 +53,7 @@
                   "maximumError": "4kb"
                 }
               ],
+              "baseHref": "/portfolio/",
               "outputHashing": "all"
             },
             "development": {
