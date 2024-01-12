@@ -54,14 +54,20 @@
                 }
               ],
               "baseHref": "/portfolio/",
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "vendorChunk": false,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "buildOptimizer": true,
+              "aot": true
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": true,
-              "vendorChunk": false,
+              "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": false,
+              "sourceMap": true,
               "namedChunks": false,
               "fileReplacements": [
                 {
