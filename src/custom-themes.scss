@@ -2,7 +2,6 @@
 
 @include mat.core();
 
-// Define a dark theme
 $light-theme: mat.define-light-theme(
   (
     color: (
@@ -14,7 +13,6 @@ $light-theme: mat.define-light-theme(
   )
 );
 
-// Define a light theme
 $dark-theme: mat.define-dark-theme(
   (
     color: (
