@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/portfolio",
             "index": "src/index.html",
+            "baseHref": "/portfolio/",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -59,7 +60,6 @@
                   "with": "src/environments/environment.production.ts"
                 }
               ],
-              "baseHref": "/portfolio/",
               "outputHashing": "all",
               "optimization": true,
               "vendorChunk": false,
