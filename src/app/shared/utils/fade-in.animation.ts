@@ -4,14 +4,14 @@ export function fadeIn() {
   return [
     trigger('fadeIn', [
       transition('void => *', [
-        style({ opacity: 0 }),           // initial styles
+        style({ opacity: 0 }),
         animate('200ms',
-          style({ opacity: 1 })          // final style after the transition has finished
+          style({ opacity: 1 })
         )
       ]),
       transition('* => void', [
         animate('500ms',
-          style({ opacity: 0 })          // we asume the initial style will be always opacity: 1
+          style({ opacity: 0 })
         )
       ])
     ])
