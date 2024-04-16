@@ -7,7 +7,7 @@ import { fadeIn } from 'src/app/shared/utils/fade-in.animation';
 @Component({
   selector: 'cv-main',
   templateUrl: 'cv-main.page.html',
-  // styleUrls: ['cv-main.page.scss'],
+  styleUrls: ['cv-main.page.scss'],
   animations: fadeIn(),
 })
 export class CVMainPage {
