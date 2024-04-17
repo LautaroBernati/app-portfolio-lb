@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Skill, SkillsService, StrippedSkill } from '../../data-access/skills.service';
 import { combineLatest, concatMap, firstValueFrom, map } from 'rxjs';
 import { IconDefinition, faAngular, faReact, faVuejs, faNodeJs, faNode, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
@@ -9,7 +9,8 @@ import { MethodologiesService } from '../../data-access/methodologies.service';
 @Component({
   selector: 'app-skills',
   templateUrl: 'skills-main.page.html',
-  styleUrls: ['skills-main.page.scss']
+  styleUrls: ['skills-main.page.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillsPage implements OnInit {
   public readonly dependencies$;
@@ -86,14 +87,14 @@ export class SkillsPage implements OnInit {
    * @returns 
    */
   private async mapearImagenes(array: StrippedSkill, iconDef: IconDefinition) {
-    const modifiedExamples = [];
+    // const modifiedExamples = [];
 
-    for (const iterator of array.Examples) {
-      const a = /*await blobToBase64(*/await firstValueFrom(this.skillsService.ObtenerImagen(iterator.ImgUrl))/*)*/;
-      modifiedExamples.push({ ...iterator, Img: a } as { Title: string; Desc: string; Img: Blob; ImgUrl: string; Type: string });
-    }
+    // for (const iterator of array.Examples) {
+    //   const a = /*await blobToBase64(*/await firstValueFrom(this.skillsService.ObtenerImagen(iterator.ImgUrl))/*)*/;
+    //   modifiedExamples.push({ ...iterator, Img: a } as { Title: string; Desc: string; Img: Blob; ImgUrl: string; Type: string });
+    // }
 
-    array.Examples = modifiedExamples;
+    // array.Examples = modifiedExamples;
     return <Skill>{ ...array, Icon: iconDef };
   }
 

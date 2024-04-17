@@ -24,7 +24,10 @@
   "skills": {
     "title": "Skills",
     "progressTitle": "Progress",
-    "btnRepo": "Repository",
+    "buttons": {
+      "repo": "Repository",
+      "deploy": "Launch"
+    },
     "tabs": {
       "tools": "Tools",
       "metds": "Methodologies"
@@ -39,6 +42,7 @@
       "ang2": "Renderer2 is a platform-agnostic service in Angular that facilitates safe and efficient manipulation of the Document Object Model (DOM). It abstracts DOM operations, ensuring security against vulnerabilities like XSS, optimizing performance, and aligning with Angular's change detection system. With Renderer2, you can create and modify DOM elements, set attributes, styles, and classes, attach event listeners, and seamlessly integrate with Angular's animation system, making it an essential tool for managing the DOM in Angular applications.",
       "ang3": "`OnPush` change detection is a strategy in Angular that optimizes performance by triggering change detection only when specific conditions are met. It's based on the idea that components with this strategy will only check for changes and update their view when their input properties change or when an explicit event occurs. This approach reduces the overhead of change detection and can significantly improve the efficiency of an application, particularly for scenarios where frequent updates aren't necessary. The strategy is applied in the metadata of the individual component, enabling them to control when change detection runs, leading to better application performance.",
       "ang4": "Portfolio project. A showcase of my skills, experiences and more about myself. Here, I use all the ideas previously mentioned, plus much more content using RxJs and an Nx-type of project structure.",
+      "ang5": "The objective of this project is to create a platform inspired by Medium (all rights reserved to them) while implementing advanced techniques such as zoneless architecture instead of zone.js.",
       "rea0": "Running React Application, which works as an online e-commerce. Using Context, Bootstrap, SweetAlert and firebase as a database. Hosted on Netlify.",
       "vue0": "A running Vue 3 App designed for a project of mine, which connects to an API built using NodeJs and Express with an instance of MongoDB for storage. This app was later replaced witha ported version built using Angular 15.",
       "node0": "Built using Node and Express, this API handles data management of the Vue 3 project. Experience with OAuthstandard, OpenID and auth tokens. Experience with streams and buffers as well. Repo is private.",

@@ -7,7 +7,10 @@ import { Observable } from 'rxjs';
 type Example = {
   Title: string;
   Desc: string;
-  Url?: string;
+  Urls?: {
+    Repository: string | null;
+    Deployment: string | null;
+  },
   ImgUrl: string;
   Type: string;
 };
