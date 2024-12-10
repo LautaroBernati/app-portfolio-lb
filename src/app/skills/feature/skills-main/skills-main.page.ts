@@ -24,8 +24,8 @@ export class SkillsPage implements OnInit {
       map(strippedSkills => {
         return strippedSkills.find(ss => ss.UID === 'ANG')!;
       }),
-      concatMap(async (angSkill) => {
-        return await this.mapearImagenes(angSkill, faAngular);
+      map((angSkill) => {
+        return this.mapearImagenes(angSkill, faAngular);
       }),
     );
 
@@ -33,8 +33,8 @@ export class SkillsPage implements OnInit {
       map(strippedSkills => {
         return strippedSkills.find(ss => ss.UID === 'REA')!;
       }),
-      concatMap(async (skill) => {
-        return await this.mapearImagenes(skill, faReact);
+      map((skill) => {
+        return this.mapearImagenes(skill, faReact);
       }),
     );
 
@@ -42,8 +42,8 @@ export class SkillsPage implements OnInit {
       map(strippedSkills => {
         return strippedSkills.find(ss => ss.UID === 'VUE')!;
       }),
-      concatMap(async (skill) => {
-        return await this.mapearImagenes(skill, faVuejs);
+      map((skill) => {
+        return this.mapearImagenes(skill, faVuejs);
       }),
     );
 
@@ -55,15 +55,15 @@ export class SkillsPage implements OnInit {
 
     const nodeSkills$ = this.skillsService.strippedSkills$.pipe(
       map(SSs => SSs.find(ss => ss.UID === 'NOD')!),
-      concatMap(async skill => await this.mapearImagenes(skill, faNode)),
+      map(skill => this.mapearImagenes(skill, faNode)),
     );
     const nestSkills$ = this.skillsService.strippedSkills$.pipe(
       map(SSs => SSs.find(ss => ss.UID === 'NES')!),
-      concatMap(async skill => await this.mapearImagenes(skill, faNodeJs)),
+      map(skill => this.mapearImagenes(skill, faNodeJs)),
     );
     const netSkills$ = this.skillsService.strippedSkills$.pipe(
       map(SSs => SSs.find(ss => ss.UID === 'NET')!),
-      concatMap(async skill => await this.mapearImagenes(skill, faMicrosoft)),
+      map(skill => this.mapearImagenes(skill, faMicrosoft)),
     );
 
     const backEndSkills$ = combineLatest([
@@ -80,21 +80,7 @@ export class SkillsPage implements OnInit {
     ]);
   }
 
-  /**
-   * Transforma las StrippedSkills a Skills, es decir, transforma las imagenes de blob a string (base64) y el icono.
-   * @param array Lista de SSs.
-   * @param iconDef Icono deseado para la StrippedSkill
-   * @returns 
-   */
-  private async mapearImagenes(array: StrippedSkill, iconDef: IconDefinition) {
-    // const modifiedExamples = [];
-
-    // for (const iterator of array.Examples) {
-    //   const a = /*await blobToBase64(*/await firstValueFrom(this.skillsService.ObtenerImagen(iterator.ImgUrl))/*)*/;
-    //   modifiedExamples.push({ ...iterator, Img: a } as { Title: string; Desc: string; Img: Blob; ImgUrl: string; Type: string });
-    // }
-
-    // array.Examples = modifiedExamples;
+  private mapearImagenes(array: StrippedSkill, iconDef: IconDefinition) {
     return <Skill>{ ...array, Icon: iconDef };
   }
 

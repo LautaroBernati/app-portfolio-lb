@@ -1,11 +1,12 @@
-import { Component, Input, Inject } from '@angular/core';
+import { Component, Input, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { Skill } from '../../data-access/skills.service';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'sk-tab-detail-ui',
   templateUrl: 'tab-detail.component.html',
-  styleUrls: ['tab-detail.component.scss']
+  styleUrls: ['tab-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TabDetailComponent {
   @Input() public descripcion: string = '';
