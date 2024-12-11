@@ -8,26 +8,50 @@
   <div class="contenedor" @fadeIn>
     <div class="columna">
       <div class="imagen-botones">
-        <div>
-          <ng-container *ngIf="pic$ | async as pic; else loadingImage;">
-            <img style="border-radius: 0.5rem;" [src]="pic" [width]="300" [height]="300" alt="image">
-          </ng-container>
-          <div style="display: flex; justify-content: space-evenly; width: 100%; margin-top: 1rem;">
-            <a mat-fab type="button" color="primary" href="https://www.linkedin.com/in/lautarobernati/" target="_blank">
-              <fa-icon [icon]="faLinkedinIn" size="2x"></fa-icon>
-            </a>
-            <a mat-fab type="button" color="primary" href="https://github.com/LautaroBernati" target="_blank">
-              <fa-icon [icon]="faGithub" size="2x"></fa-icon>
-            </a>
-          </div>
+        <img
+          alt="image"
+          src="assets/images/profile-pic.jpg"
+          [height]="300"
+          [width]="300"
+        />
+        <div class="img-btn-area">
+          <a
+            mat-fab
+            color="primary"
+            href="https://www.linkedin.com/in/lautarobernati/"
+            target="_blank"
+            type="button"
+          >
+            <fa-icon
+              size="2x"
+              [icon]="faLinkedinIn"
+            ></fa-icon>
+          </a>
+          <a
+            mat-fab
+            color="primary"
+            href="https://github.com/LautaroBernati"
+            target="_blank"
+            type="button"
+          >
+            <fa-icon
+              size="2x"
+              [icon]="faGithub"
+            ></fa-icon>
+          </a>
         </div>
       </div>
     </div>
     <div class="columna">
       <h3 [translate]="'about.subtitle'"></h3>
-      <p>
-        {{ 'about.intro' | translate }}
-      </p>
+      <p
+        *ngIf="('about.intro' | translate).toString() as text"
+        [title]="(showFullContent ? 'cv.buttons.details.expanded' : 'cv.buttons.details.hidden') | translate"
+        (click)="onToggleReadBtn()"
+        [innerHTML]="
+          (curateText(text) | slice: 0:(showFullContent ? undefined : 350)) + ( !showFullContent ? '...' : '')
+        "
+      ></p>
       <div class="items-cv">
         <ul>
           <li>
@@ -54,10 +78,6 @@
             <fa-icon [icon]="capIcon"></fa-icon>
             <strong>{{ 'about.items.diploma' | translate }}</strong>
           </li>
-          <li>
-            <fa-icon [icon]="planeIcon"></fa-icon>
-            <strong>{{ 'about.items.ready' | translate }}</strong>
-          </li>
         </ul>
       </div>
     </div>
@@ -65,5 +85,8 @@
 </div>
 
 <ng-template #loadingImage>
-  <mat-spinner [mode]="'indeterminate'" style="max-width: 5rem; max-height: 5rem; margin: 1rem"></mat-spinner>
+  <mat-spinner
+    class="spinner"
+    [mode]="'indeterminate'"
+  ></mat-spinner>
 </ng-template>
